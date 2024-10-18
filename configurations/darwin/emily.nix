@@ -11,7 +11,8 @@ in
     self.darwinModules.default
     self.darwinModules.homebrew
   ];
-
+  services.activate-system.enable = true;
+  services.nix-daemon.enable = true;
   nixpkgs.hostPlatform = "aarch64-darwin";
   networking.hostName = "emily";
 

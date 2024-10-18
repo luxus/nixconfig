@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-    environment.systemPath =
+  environment.systemPath =
     if pkgs.system == "aarch64-darwin" then
       [
         "/opt/homebrew/bin"
@@ -9,7 +9,7 @@
     else
       [ ];
   homebrew = {
-      enable = true;
+    enable = true;
     onActivation = {
       autoUpdate = true;
       upgrade = true;
@@ -50,6 +50,8 @@
       "plexamp"
       "utm"
       "gitkraken"
+      "orbstack"
+      "cursor"
       "plex"
       "microsoft-edge@dev"
       "lunar"
