@@ -1,12 +1,21 @@
 # This is your nix-darwin configuration.
 # For home configuration, see /modules/home/*
-{ flake, pkgs, lib, ... }:
+{ flake
+, pkgs
+, lib
+, ...
+}:
 
 let
   inherit (flake) inputs;
   inherit (inputs) self;
 in
 {
+  environment.shells = with pkgs; [
+    zsh
+    nushell
+    bash
+  ];
   fonts.packages = with pkgs; [
     # delugia-code
     # iosevka
@@ -24,7 +33,10 @@ in
   security.pam.enableSudoTouchIdAuth = true;
 
   # These users can add Nix caches.
-  nix.settings.trusted-users = [ "root" "luxus" ];
+  nix.settings.trusted-users = [
+    "root"
+    "luxus"
+  ];
   nixpkgs.config.allowUnfree = true;
 
   # Configure macOS system

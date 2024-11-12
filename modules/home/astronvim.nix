@@ -1,7 +1,8 @@
-{ globals
-, flake
-, pkgs
-, ...
+{
+  globals,
+  flake,
+  pkgs,
+  ...
 }:
 let
   sources = pkgs.callPackage (globals.root + /_sources/generated.nix) { };
@@ -19,12 +20,13 @@ in
 
   home = {
     sessionVariables = {
-      #   EDITOR = "nvim";
+      EDITOR = "nvim";
       VISUAL = "nvim";
     };
     packages = with pkgs; [
-      jdk22
+      # jdk22
       go
+      unzip
       vale
       luajitPackages.tiktoken_core
       luajitPackages.luarocks
@@ -32,7 +34,10 @@ in
       libgit2
       nodejs_23
       python3
-      vale
+      deno
+      nodePackages.jsonlint
+      selene
+      aider-chat
       ripgrep
       tree-sitter
       nixd

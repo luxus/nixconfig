@@ -1,4 +1,8 @@
-{ pkgs, config, lib, ... }:
+{ pkgs
+, config
+, lib
+, ...
+}:
 let
   fzf-preview =
     pkgs.writeShellScriptBin "fzf-preview"
@@ -33,8 +37,11 @@ with builtins // lib;
     # For macOS's default shell.
     oh-my-posh = {
       enable = true;
-      useTheme = "montys"; #montys
+      useTheme = "montys"; # montys
       # settings = builtins.fromTOML (builtins.readFile ./omp.toml);
+    };
+    nushell = {
+      enable = true;
     };
     zsh = {
       enable = true;
@@ -222,6 +229,7 @@ with builtins // lib;
     };
     # Type `z <pat>` to cd to some directory
     zoxide.enable = true;
+    carapace.enable = true;
 
     # Better shell prmot!
     starship = {

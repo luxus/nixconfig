@@ -31,7 +31,7 @@ in
       ".config/aerospace/aerospace.toml".source = gen {
         start-at-login = true;
         after-startup-command = [
-          "exec-and-forget ${pkgs.jankyborders}/bin/borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0"
+          "exec-and-forget ${pkgs.jankyborders}/bin/borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 blacklist='iPhone Mirroring'"
         ];
 
         # exec-on-workspace-change = [

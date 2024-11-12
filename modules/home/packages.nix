@@ -11,7 +11,6 @@
     packages = with pkgs; [
       # Unix tools
       ripgrep # Better `grep`
-      fd
       sd
       tree
       nmap
@@ -22,11 +21,10 @@
       rclone
       rsync
       w3m
-      nix-tree
       ast-grep
       mediainfo
       odt2txt
-      spotify-player
+      # spotify-player
       pueue
       zenith
       croc
@@ -39,6 +37,10 @@
       duf
       gitu
       devenv
+      twitch-tui
+      nushellPlugins.skim
+      nushellPlugins.gstat
+      nushellPlugins.net
 
       # Nix dev
       cachix
@@ -46,9 +48,12 @@
       nix-info
       nixpkgs-fmt
       nixfmt-rfc-style
+      nixpkgs-review
+      nix-tree
 
       # Dev
       tmate
+      mas
 
       # On ubuntu, we need this less for `man home-configuration.nix`'s pager to
       # work.
@@ -60,6 +65,9 @@
   # They can be configured in `programs.*` instead of using home.packages.
   programs = {
     bottom = {
+      enable = true;
+    };
+    skim = {
       enable = true;
     };
 

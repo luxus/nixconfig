@@ -1,6 +1,6 @@
 # See /modules/darwin/* for actual settings
 # This file is just *top-level* configuration.
-{ flake, ... }:
+{ flake, pkgs, ... }:
 
 let
   inherit (flake) inputs;
@@ -19,6 +19,7 @@ in
   # For home-manager to work.
   # https://github.com/nix-community/home-manager/issues/4026#issuecomment-1565487545
   users.users."luxus".home = "/Users/luxus";
+  users.users."luxus".shell = pkgs.nushell;
 
   # Enable home-manager for "luxus" user
   home-manager.users."luxus" = {
